@@ -17,9 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   
     chrome.downloads.download(request.download, function (downloadId) {
             
-        if (KellyEDispetcher.api.runtime.lastError) {    
+        if (chrome.runtime.lastError) {    
         
-            response.error = KellyEDispetcher.api.runtime.lastError.message;
+            response.error = chrome.runtime.lastError.message;
             response.downloadId = -1;
             
         } else {
